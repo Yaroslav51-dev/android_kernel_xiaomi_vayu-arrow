@@ -12,7 +12,7 @@ export KBUILD_BUILD_USER=t.me
 # git clone -q --depth=1 --single-branch https://github.com/kdrag0n/proton-clang.git -b master clang
     
 make -s ARCH=arm64 O=out vayu_user_defconfig -j$(nproc --all)
-git clone https://github.com/XSans0/WeebX-Clang/releases/download/WeebX-Clang-18.1.8-release/WeebX-Clang-18.1.8.tar.gz /home/runner/vayu/clang/
+wget https://github.com/XSans0/WeebX-Clang/releases/download/WeebX-Clang-18.1.8-release/WeebX-Clang-18.1.8.tar.gz /home/runner/vayu/clang/
 tar -xvzf /home/runner/vayu/clang/WeebX-Clang-18.1.8.tar.gz
 export PATH="/home/runner/vayu/clang/bin:$PATH"
 
