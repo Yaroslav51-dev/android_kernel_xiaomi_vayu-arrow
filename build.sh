@@ -9,7 +9,7 @@ sudo apt update && sudo -H apt-get install bc python2 ccache binutils-aarch64-li
 export KBUILD_BUILD_HOST=Yaroslav
 export KBUILD_BUILD_USER=t.me
 
-git clone -q --depth=1 --single-branch https://gitlab.com/crdroidandroid/android_prebuilts_clang_host_linux-x86_clang-r510928.git -b 14.0 clang
+git clone -q --depth=1 --single-branch https://github.com/kdrag0n/proton-clang.git -b master clang
     
 make -s ARCH=arm64 O=out vayu_user_defconfig -j$(nproc --all)
 
