@@ -4,7 +4,7 @@
 # Taking from AnymoreProject kernel source 
 #
 #
-
+cd $HOME/vayu/
 sudo apt update && sudo -H apt-get install bc python2 ccache binutils-aarch64-linux-gnu cpio tar gzip build-essential
 
 export KBUILD_BUILD_HOST=Yaroslavkryt
