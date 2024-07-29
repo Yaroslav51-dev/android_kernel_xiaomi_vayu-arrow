@@ -13,4 +13,4 @@ export KBUILD_BUILD_USER=t.me
 
 make -s ARCH=arm64 O=out vayu_user_defconfig -j$(nproc --all)
 
-make -j$(nproc --all) O=out ARCH=arm64 CC="ccache clang" CLANG_TRIPLE="$HOME/clang/aarch64-linux-gnu-" CROSS_COMPILE="$HOME/clang/aarch64-linux-gnu-" CROSS_COMPILE_ARM32="$HOME/clang/arm-linux-gnueabi-" LLVM=1 LLVM_IAS=1
+make -j$(nproc --all) O=out ARCH=arm64 CC="ccache clang" CLANG_TRIPLE="$HOME/clang/bin/aarch64-linux-gnu-" CROSS_COMPILE="$HOME/clang/bin/aarch64-linux-gnu-" CROSS_COMPILE_ARM32="$HOME/clang/bin/arm-linux-gnueabi-" LLVM=1 LLVM_IAS=1
