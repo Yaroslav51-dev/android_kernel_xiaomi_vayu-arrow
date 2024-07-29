@@ -4,16 +4,13 @@
 # Taking from AnymoreProject kernel source 
 #
 #
-HOME=home/runner/work/kernel_build/kernel_build
+HOME="home/runner/work/kernel_build/kernel_build"
 
 sudo apt update && sudo -H apt-get install bc python2 ccache binutils-aarch64-linux-gnu cpio tar gzip build-essential
 
 export KBUILD_BUILD_HOST=Yaroslavkryt
 export KBUILD_BUILD_USER=t.me
 
-# git clone -q --depth=1 --single-branch https://github.com/kdrag0n/proton-clang.git -b master clang
-    
 make -s ARCH=arm64 O=out vayu_user_defconfig -j$(nproc --all)
-export PATH="$HOME/vayu/clang/bin:$PATH"
 
-make -j$(nproc --all) O=out ARCH=arm64 CC="ccache clang" CLANG_TRIPLE="aarch64-linux-gnu-" CROSS_COMPILE="aarch64-linux-gnu-" CROSS_COMPILE_ARM32="arm-linux-gnueabi-" LLVM=1 LLVM_IAS=1
+make -j$(nproc --all) O=out ARCH=arm64 CC="ccache clang" CLANG_TRIPLE="$HOME/clang/aarch64-linux-gnu-" CROSS_COMPILE="$HOME/clang/aarch64-linux-gnu-" CROSS_COMPILE_ARM32="$HOME/clang/arm-linux-gnueabi-" LLVM=1 LLVM_IAS=1
