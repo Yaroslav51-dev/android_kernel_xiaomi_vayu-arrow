@@ -9,7 +9,8 @@ sudo apt update && sudo -H apt-get install bc python2 ccache binutils-aarch64-li
 
 export KBUILD_BUILD_HOST=Yaroslavkryt
 export KBUILD_BUILD_USER=t.me
+export PATH="$HOME/clang/bin:$PATH"
 
 make -s ARCH=arm64 O=out vayu_user_defconfig -j$(nproc --all)
 
-make -j$(nproc --all) O=out ARCH=arm64 CC="ccache clang" CLANG_TRIPLE=$HOME/clang/bin/aarch64-linux-gnu- CROSS_COMPILE=$HOME/clang/bin/aarch64-linux-gnu- CROSS_COMPILE_ARM32=$HOME/clang/bin/arm-linux-gnueabi- LLVM=1 LLVM_IAS=1
+make -j$(nproc --all) O=out ARCH=arm64 CC="ccache clang" CLANG_TRIPLE=aarch64-linux-gnu- CROSS_COMPILE=aarch64-linux-gnu- CROSS_COMPILE_ARM32=arm-linux-gnueabi- LLVM=1 LLVM_IAS=1
