@@ -10,7 +10,7 @@ sudo apt-get install -y pwgen libswitch-perl policycoreutils minicom libxml-sax-
 sudo apt-get install -y zip unzip tar gzip bzip2 rar unrar llvm g++-multilib bison gperf zlib1g-dev automake
 export KBUILD_BUILD_HOST=Yaroslavkryt
 export KBUILD_BUILD_USER=t.me
-export PATH="$HOME/gcc/bin:$PATH"
+export PATH="$HOME/clang/bin:$PATH"
 
 make -s ARCH=arm64 O=out vayu_user_defconfig -j$(nproc --all) SUBARCH=arm64
-make -j$(nproc --all) O=out ARCH=arm64 SUBARCH=arm64 LLVM=1 LLVM_IAS=1 CC="ccache clang" CLANG_TRIPLE="aarch64-linux-gnu-" CROSS_COMPILE="aarch64-linux-gnu-" CROSS_COMPILE_ARM32="arm-linux-gnueabi-"
+make -j$(nproc --all) O=out ARCH=arm64 CC="ccache clang" CLANG_TRIPLE=aarch64-linux-gnu- CROSS_COMPILE=aarch64-linux-gnu- CROSS_COMPILE_ARM32=arm-linux-gnueabi- SUBARCH=arm64 DTC_EXT=dtc LLVM=1 LLVM_IAS=1     
